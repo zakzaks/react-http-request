@@ -19,7 +19,7 @@ export async function updateUserPlaces(places) {
 
 	const data = await response.json();
 
-	if (!response.ok) throw new Error("Failed to put data");
+	if (!response.ok) throw new Error(data.message || "Failed to update places.");
 
 	return data.message;
 }
